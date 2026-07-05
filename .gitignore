@@ -1,0 +1,48 @@
+# Зависимости
+vendor/
+
+# Файлы сборки
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+subscription-service
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Файлы окружения
+.env
+.env.local
+.env.*.local
+
+# Базы данных
+*.db
+*.sqlite
+*.sqlite3
+
+# Логи
+*.log
+logs/
+
+# Временные файлы
+tmp/
+temp/
+request.json
+request2.json
+request_error.json
+test_api.ps1
+migrate.go
+check.go
+test.go
+
+# Go
+go.sum
+coverage.out
