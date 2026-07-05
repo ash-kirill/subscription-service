@@ -1,3 +1,9 @@
+// @title Subscription Service API
+// @version 1.0
+// @description REST API for managing user subscriptions
+// @host localhost:8080
+// @BasePath /
+
 package main
 
 import (
@@ -8,6 +14,8 @@ import (
     "github.com/ash-kirill/subscription-service/internal/config"
     "github.com/ash-kirill/subscription-service/internal/handler"
     "github.com/ash-kirill/subscription-service/internal/repository"
+
+    _ "subscription-service/docs" // Добавьте эту строку
 )
 
 func main() {
@@ -36,6 +44,11 @@ func main() {
     mux.HandleFunc("PUT /subscriptions/{id}", subscriptionHandler.UpdateSubscription)
     mux.HandleFunc("DELETE /subscriptions/{id}", subscriptionHandler.DeleteSubscription)
     mux.HandleFunc("GET /subscriptions/total", subscriptionHandler.GetTotalPrice)
+
+    //Добавляем Swagger UI
+    mux.HandleFunc("GET /swagger/", func(w http.ResponseWriter, r *http.Request) {
+        http.ServeFile(w, r, "./docs/swagger.json")
+    })
 
     // 5. Запускаем сервер
     server := &http.Server{
