@@ -15,7 +15,7 @@ import (
     "github.com/ash-kirill/subscription-service/internal/handler"
     "github.com/ash-kirill/subscription-service/internal/repository"
 
-    _ "subscription-service/docs" // Добавьте эту строку
+    _ "github.com/ash-kirill/subscription-service/docs" // Добавьте эту строку
 )
 
 func main() {
