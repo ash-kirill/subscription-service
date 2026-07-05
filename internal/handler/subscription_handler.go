@@ -3,7 +3,6 @@ package handler
 import (
     "encoding/json"
     "net/http"
-    //"strconv"
 
     "github.com/ash-kirill/subscription-service/internal/model"
     "github.com/ash-kirill/subscription-service/internal/service"
